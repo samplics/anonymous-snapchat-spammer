@@ -1,5 +1,6 @@
 const express = require('express'),
 axios = require('axios'),
+crypto = require('crypto'),
 assert = require('assert');
 
 const yolo = express.Router();
