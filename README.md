@@ -1,2 +1,5 @@
 # snap-anon-spam
-Spam yolo
+
+Express server to spam those stupif "anonymous" message things on snapchat
+
+Allows YOLO and LMK messagers to spam
