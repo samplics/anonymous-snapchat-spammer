@@ -16,8 +16,11 @@ const yoloSpam = async (code, message, num)=>{
         //generate random hex for cookie
         let cookie = crypto.randomBytes(8).toString('hex');
         //send post request to yolo
-        axios.post(`https://onyolo.com/${code}/message`, { text: message, cookie: cookie, wording: 'Rekt by Sampli' });
-        console.log(`Sent Message ${iteration}`);
+        axios.post(`https://onyolo.com/${code}/message`, { text: message, cookie: cookie, wording: 'Rekt by Sampli' })
+        .then((res)=>console.log(`Sent Message ${iteration}`))
+        .catch((err)=>{
+            if(err.response.status == 403) console.log('Your IP is currently ratelimited by YOLO. Please wait atleast 15 minutes.');
+        });
         iteration++;
     }, 100);
 };
@@ -28,8 +31,8 @@ const lmkSpam = async (code, message, num)=>{
     var interval = setInterval(()=>{
         if(iteration == num) clearInterval(interval);
         //send post request to lmk
-        axios.post(`https://api.lmk.chat/questions/${code}/answer`, { message: message, webSessionId: code });
-        console.log(`Sent Message ${iteration}`);
+        axios.post(`https://api.lmk.chat/questions/${code}/answer`, { message: message, webSessionId: code })
+        .then((res)=>console.log(`Sent Message ${iteration}`));
         iteration++;
     }, 100);
 };
