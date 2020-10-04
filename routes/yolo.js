@@ -17,7 +17,7 @@ const yoloSpam = async (code, title, message, num)=>{
     //run loop for amount said
     var iteration = 1
     var interval = setInterval(()=>{
-        if(iteration > num) clearInterval(interval);
+        if(iteration == num) clearInterval(interval);
         //generate random hex for cookie
         let cookie = crypto.randomBytes(8).toString('hex');
         //send post request to yolo
