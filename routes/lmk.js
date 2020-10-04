@@ -18,7 +18,7 @@ const lmkSpam = async (code, message, num)=>{
         if(iteration == num) clearInterval(interval);
         //send post request to lmk
         axios.post(`https://api.lmk.chat/questions/${code}/answer`, { message: message, webSessionId: code })
-        .then((res)=>console.log(`Sent Message ${iteration}`));
+        .then((res)=>console.log(`Sent Message ${iteration}`))
         .catch((err)=>{throw new Error(err)});
         iteration++;
     }, 100);
