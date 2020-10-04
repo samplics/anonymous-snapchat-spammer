@@ -1,5 +1,6 @@
 const express = require('express'),
 axios = require('axios'),
+crypto = require('crypto'),
 assert = require('assert');
 
 const yolo = express.Router();
@@ -22,6 +23,7 @@ const yoloSpam = async (code, title, message, num)=>{
         //send post request to yolo
         axios.post(`https://onyolo.com/${code}/message`, { text: message, cookie: cookie, wording: title })
         .catch((err)=>{throw new Error(err)});
+        console.log(`Sent Message ${iteration}`);
         iteration++;
     }, 100);
 };
