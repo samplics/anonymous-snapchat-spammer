@@ -1,3 +1,5 @@
+# Repo is deprecated: yolo updated their system and don't allow for spamming (They don't provide any information on what is wrong)
+
 # snap-anon-spam
 
 Express server, or terminal function to spam those stupid "anonymous" message things on snapchat
